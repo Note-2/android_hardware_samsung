@@ -471,7 +471,7 @@ static int alloc_device_alloc(alloc_device_t* dev, int w, int h, int format,
         format == HAL_PIXEL_FORMAT_YV12 ||
         format == HAL_PIXEL_FORMAT_CUSTOM_YCrCb_420_SP ||
         format == HAL_PIXEL_FORMAT_CUSTOM_YCbCr_420_SP_TILED ||
-        format == GGL_PIXEL_FORMAT_L_8 ||
+        format == HAL_PIXEL_FORMAT_Y8 ||
         format == OMX_COLOR_FormatYUV420Planar ||
         format == OMX_COLOR_FormatYUV420SemiPlanar ||
         /* TODO: find constants for these literals, it's no problem if they are duplicated */
@@ -562,7 +562,7 @@ static int alloc_device_alloc(alloc_device_t* dev, int w, int h, int format,
             size = (stride * vstride) + EXYNOS4_ALIGN(w * h / 2, 2);
             break;
 
-        case GGL_PIXEL_FORMAT_L_8: //0x9 , defined in system/core/include/pixelflinger/format.h
+        case HAL_PIXEL_FORMAT_Y8: //0x9 , defined in system/core/include/pixelflinger/format.h
             size = (stride * vstride);
             break;
 
